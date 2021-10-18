@@ -25,7 +25,7 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		Gerente Guilherme = new Gerente("Guilherme", "123456"); // Gerente a ser cadastrada
+		Gerente Guilherme = new Gerente("Guilherme", "123456");  
 
 		Gerente  Lucas = new Gerente("Lucas"); // Gerente a ser buscado;
 
