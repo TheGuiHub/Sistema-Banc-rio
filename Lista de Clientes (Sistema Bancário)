@@ -1,0 +1,55 @@
+package sistema_bancario;
+
+import java.util.ArrayList;
+
+public class listaDeCliente {
+	private ArrayList<Cliente> clientes = new ArrayList<Cliente>( );
+	
+	public void cadastrar(Cliente cliente) {
+		if(cliente != null) {
+			clientes.add(cliente);
+		}
+	}
+	
+	public void remover(Cliente cliente) {
+		clientes.removeIf((elemento)->elemento.getCPF().equalsIgnoreCase(cliente.getCPF()));
+	}
+	
+	
+}
+
+Classe Principal 
+package sistema_bancario;
+
+public class Principal {
+
+	public static void main(String[] args) {
+
+		Gerente Guilherme = new Gerente("Guilherme", "123456"); // Gerente a ser cadastrada
+
+		Gerente  Lucas = new Gerente("Lucas"); // Gerente a ser buscado;
+
+		ListaDeGerentes gerentes = new ListaDeGerentes( );
+		
+		gerentes.cadastrar(Guilherme);
+
+		Gerente busca = gerentes.buscar(Gui);
+
+		if (busca == null) {
+			System.out.println("Esse gerente não foi encontrado");
+		} else {
+			System.out.printf("%s localizado!!!\n", busca.getNome());
+		}
+
+		gerentes.remover("Guilherme");
+
+		busca = gerentes.buscar("Guilherme");
+
+		if (busca == null) {
+			System.out.println("Esse gerente não foi encontrado*);
+		} else {
+			System.out.printf("%s localizado!!!", busca.getNome());
+		}
+	}
+
+}
